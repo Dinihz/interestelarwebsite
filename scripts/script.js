@@ -1,20 +1,19 @@
-const tabMenu = document.querySelectorAll(".js-tabmenu li")
-const tabContent = document.querySelectorAll(".js-tabcontent section")
-tabContent[0].classList.add("active")
+const tabMenu = document.querySelectorAll(".js-tabmenu li");
+const tabContent = document.querySelectorAll(".js-tabcontent section");
 
+tabContent[0].classList.add("active");
 
-if(tabMenu.length && tabContent.length) {
-function activeTab(index) {
+if (tabMenu.length && tabContent.length) {
+  function activeTab(index) {
     tabContent.forEach((section) => {
-        section.classList.remove("active")
+      section.classList.remove("active");
     });
     tabContent[index].classList.add("active");
-}
+  }
 
-
-tabMenu.forEach((itenMenu, index) => {
+  tabMenu.forEach((itenMenu, index) => {
     itenMenu.addEventListener("click", () => {
-        activeTab(index);
-    })
-})
+      activeTab(index);
+    });
+  });
 }
