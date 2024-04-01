@@ -40,3 +40,28 @@ function initAccordion() {
   }
 }
 initAccordion();
+
+function initScrollSmooth() {
+  const internalLinks = document.querySelectorAll('.js-menu a[href^="#"]');
+
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    // const ofTop = section.offsetTop;
+    // window.scrollTo({
+    //   top: ofTop,
+    //   behavior: "smooth",
+    // });
+  }
+
+  internalLinks.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
+initScrollSmooth();
