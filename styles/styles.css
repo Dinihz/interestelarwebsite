@@ -99,7 +99,8 @@ body {
 }
 
 .summary-list {
-  height: 370px;
+  height: 440px;
+  width: 310px;
   overflow-y: scroll;
   grid-column: 2;
 }
@@ -270,4 +271,15 @@ body {
     max-height: 200px;
     opacity: 1;
   }
+}
+
+.js .js-scroll {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+}
+
+.js .js-scroll.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.3s;
 }
